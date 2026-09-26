@@ -103,7 +103,7 @@ export default function Footer() {
                 </p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-1 block break-all text-[14px] font-bold uppercase tracking-wide text-white transition hover:text-industrial-steel-light"
+                  className="mt-1 block break-all text-[14px] font-bold tracking-wide text-white transition hover:text-industrial-steel-light"
                 >
                   {site.email}
                 </a>
@@ -116,7 +116,7 @@ export default function Footer() {
                   href={site.phoneHref}
                   className="mt-1 block text-[14px] font-bold text-white transition hover:text-industrial-steel-light"
                 >
-                  +91 {site.phone}
+                  {site.phone}
                 </a>
               </div>
               <div>

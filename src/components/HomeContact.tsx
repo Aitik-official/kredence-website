@@ -108,7 +108,7 @@ export default function HomeContact() {
                 <p className="relative mt-4 text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
                   {card.label}
                 </p>
-                <p className="relative mt-2 text-[15px] leading-relaxed break-words text-white">
+                <p className="relative mt-2 whitespace-pre-line text-[15px] leading-relaxed break-words text-white">
                   {card.value}
                 </p>
               </>
@@ -214,7 +214,7 @@ export default function HomeContact() {
 
             {status === "success" ? (
               <p className="text-sm font-medium text-industrial-ink sm:col-span-2">
-                Enquiry sent to {site.email}. We&apos;ll get back within 12 hours.
+                We&apos;ll get back within 12 hours.
               </p>
             ) : null}
             {status === "error" ? (

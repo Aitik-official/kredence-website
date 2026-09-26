@@ -151,7 +151,7 @@ export default function ContactForm() {
             </button>
             {status === "success" ? (
               <p className="text-sm text-industrial-ink">
-                Enquiry sent to {site.email}. We&apos;ll get back within 12 hours.
+                We&apos;ll get back within 12 hours.
               </p>
             ) : null}
             {status === "error" ? (

@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 
     const { error } = await resend.emails.send({
       from,
-      to: [site.email],
+      to: [site.enquiryEmail],
       replyTo: email,
       subject: `Kredence Steel enquiry — ${need} — ${name}`,
       html: `

@@ -17,7 +17,7 @@ export default function TopBar() {
           </a>
           <span className="hidden items-center gap-2 opacity-95 md:inline-flex">
             <Clock className="h-3.5 w-3.5 shrink-0" />
-            {site.hours}
+            {site.hoursShort}
           </span>
         </div>
 
@@ -38,7 +38,7 @@ export default function TopBar() {
             className="hidden items-center gap-2 opacity-95 transition hover:opacity-100 sm:inline-flex"
           >
             <MapPin className="h-3.5 w-3.5 shrink-0" />
-            New Delhi
+            Dubai, UAE
           </a>
           <Link
             href="/contact"
