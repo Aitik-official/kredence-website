@@ -11,10 +11,10 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "ems-grad text-white hover:brightness-110 shadow-sm shadow-ems-blue/25",
-  white: "bg-white text-ems-navy hover:bg-ems-soft",
+    "logo-grad text-white shadow-sm shadow-industrial-dark/25",
+  white: "bg-white text-industrial-ink hover:bg-industrial-soft",
   ghost:
-    "bg-transparent text-finbiz-navy border border-finbiz-navy/15 hover:border-ems-cyan hover:text-ems-cyan",
+    "bg-transparent text-industrial-ink border border-industrial-ink/15 hover:border-industrial-steel hover:text-industrial-steel",
 };
 
 export default function Button({

@@ -1,96 +1,107 @@
 import Image from "next/image";
-import { Check } from "lucide-react";
+import BrandMark from "./BrandMark";
 import Reveal from "./Reveal";
-import { about } from "@/data/site";
+import SectionButton from "./SectionButton";
 
-export default function About() {
+const ranges = [
+  {
+    index: "01",
+    title: "Fencing systems",
+    detail: "Panels, hoardings, PVC eco fence, weld mesh, Heras, and chain link.",
+  },
+  {
+    index: "02",
+    title: "Coated metals",
+    detail: "GI and PPGI coils, sheets, purlins, sandwich panels, and roofing.",
+  },
+] as const;
+
+export default function About({
+  moreHref = "/about",
+  fit = false,
+  hideLabel = false,
+}: {
+  moreHref?: string;
+  fit?: boolean;
+  hideLabel?: boolean;
+}) {
   return (
     <section
       id="about"
-      className="relative overflow-hidden border-b-[3px] border-ems-green bg-white py-14 sm:py-20 lg:py-28"
+      className={`bg-industrial-blue ${fit ? "flex min-h-[100svh] flex-col justify-center py-16" : "py-20 sm:py-24 lg:py-28"}`}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-6 top-10 hidden gap-1.5 md:flex lg:left-10"
-      >
-        {[28, 40, 22, 34].map((h, i) => (
-          <span
-            key={i}
-            className="w-[2px] rounded-full bg-ems-cyan/80"
-            style={{ height: h }}
-          />
-        ))}
-      </div>
-
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-        <Reveal variant="left" className="relative mx-auto aspect-square w-full max-w-[380px] sm:max-w-[520px] lg:mx-0 lg:max-w-none">
-          <div
-            aria-hidden
-            className="absolute -left-[6%] top-[8%] h-[72%] w-[72%] rounded-[42%_58%_48%_52%] bg-[linear-gradient(135deg,#006dc2_0%,#03abab_55%,#4ea32a_100%)]"
-          />
-          <div
-            aria-hidden
-            className="absolute left-[8%] top-[18%] h-[55%] w-[55%] overflow-hidden rounded-full opacity-40"
-          >
+      <div className="mx-auto grid w-full max-w-6xl items-stretch gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-12">
+        <Reveal variant="left" className="h-full">
+          <div className="grid h-full grid-cols-12 gap-3">
+          <div className="relative col-span-7 h-full min-h-[220px] overflow-hidden bg-industrial-dark sm:min-h-[280px]">
             <Image
-              src={about.accentImage}
-              alt=""
+              src="/products/fencing-1.jpeg"
+              alt="Corrugated fencing panels on a project site"
               fill
-              className="object-cover"
-              sizes="280px"
+              className="object-cover transition duration-700 hover:scale-105"
+              sizes="(max-width: 1024px) 60vw, 30vw"
             />
+            <span className="pointer-events-none absolute inset-4 border border-white/35" />
           </div>
-
-          <div
-            className="absolute bottom-0 right-0 h-[88%] w-[88%] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.12)]"
-            style={{
-              borderRadius: "48% 52% 42% 58% / 42% 38% 62% 58%",
-            }}
-          >
-            <Image
-              src={about.image}
-              alt="EMS team collaborating"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 90vw, 45vw"
-            />
+          <div className="col-span-5 flex h-full flex-col gap-3">
+            <div className="relative min-h-[110px] flex-1 overflow-hidden bg-industrial-dark sm:min-h-[140px]">
+              <Image
+                src="/products/ppgi-1.jpg"
+                alt="Color coated steel coils ready for supply"
+                fill
+                className="object-cover transition duration-700 hover:scale-105"
+                sizes="(max-width: 1024px) 40vw, 18vw"
+              />
+            </div>
+            <div className="bg-industrial-dark px-4 py-5 text-white sm:px-5 sm:py-6">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-industrial-steel">
+                Since 2010
+              </p>
+              <p className="mt-2 font-serif text-[1.35rem] italic leading-tight text-white">
+                Building excellence for every project
+              </p>
+            </div>
+          </div>
           </div>
         </Reveal>
 
-        <Reveal variant="right" delay={120} className="relative">
-          <span
-            aria-hidden
-            className="outline-text pointer-events-none absolute -left-2 -top-8 select-none text-[3.25rem] font-bold leading-none sm:-top-10 sm:text-[6.5rem] lg:-top-14 lg:text-[7.5rem]"
-          >
-            {about.watermark}
-          </span>
-
-          <p className="relative mb-3 text-xs font-bold uppercase tracking-[0.2em] text-finbiz-red">
-            {about.eyebrow}
-          </p>
-          <h2 className="relative mb-5 max-w-lg text-[1.85rem] font-bold leading-[1.25] text-[#1A2432] sm:text-[2.35rem]">
-            {about.title}
+        <Reveal variant="right" delay={80}>
+          {hideLabel ? null : (
+            <p className="mb-4 inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.28em] text-industrial-steel">
+              <BrandMark className="h-3.5 w-3.5" color="currentColor" />
+              About the company
+            </p>
+          )}
+          <h2 className="font-display max-w-xl text-[1.85rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-industrial-ink sm:text-[2.5rem]">
+            Fence systems and coated metals from one trading desk
           </h2>
-          <p className="relative mb-8 max-w-xl text-[15px] leading-[1.8] text-[#666666]">
-            {about.description}
+          <p className="mt-5 max-w-xl font-serif text-[1.45rem] italic leading-snug text-industrial-ink sm:text-[1.65rem]">
+            One company for the fence line and the metal.
+          </p>
+          <p className="mt-5 max-w-xl text-[15px] leading-[1.85] text-[#5c5c5c]">
+            Kredence Steel Trading supplies what construction sites and industrial
+            buildings specify. Send the product and the quantity. We confirm what
+            is available and arrange supply for the site.
           </p>
 
-          <div className="relative grid gap-4 sm:grid-cols-2">
-            {about.featureCards.map((item, i) => (
-              <Reveal
-                key={item}
-                delay={180 + i * 80}
-                variant="up"
-                className="card-lift flex items-center gap-3 rounded-xl border border-[#eee] bg-white px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.04)]"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ems-green text-white">
-                  <Check className="h-4 w-4" strokeWidth={3} />
+          <div className="mt-8 border-y border-[#e6e6e6]">
+            {ranges.map((range, i) => (
+              <Reveal key={range.index} delay={i * 140} className="flex gap-4 py-5">
+                <span className="font-serif text-xl italic leading-none text-industrial-steel">
+                  {range.index}
                 </span>
-                <p className="text-[14px] font-semibold text-[#1A2432]">
-                  {item}
-                </p>
+                <div>
+                  <p className="font-display text-base font-medium uppercase tracking-[0.04em] text-industrial-ink">
+                    {range.title}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#5c5c5c]">{range.detail}</p>
+                </div>
               </Reveal>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <SectionButton href={moreHref}>Know more</SectionButton>
           </div>
         </Reveal>
       </div>

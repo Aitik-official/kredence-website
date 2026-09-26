@@ -29,9 +29,9 @@ const infraIcons = {
   warehouse: Warehouse,
 } as const;
 const tabs = [
-  { id: "infrastructure", label: "Infrastructure Setup" },
-  { id: "rental", label: "Rental Services" },
-  { id: "supply", label: "Asset Supply & Services" },
+  { id: "infrastructure", label: "Structural Steel" },
+  { id: "rental", label: "Stainless & Alloys" },
+  { id: "supply", label: "Sheets, Plates & Coils" },
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];
@@ -247,7 +247,7 @@ export default function ServicesHub() {
               href="/contact"
               className="inline-flex w-full items-center justify-center rounded-md bg-white px-7 py-3.5 text-sm font-bold text-ems-navy transition hover:bg-ems-soft sm:w-auto"
             >
-              Contact EMS
+              Contact Kredence Steel
             </Link>
           </div>
         </Reveal>

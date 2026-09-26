@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
+import { ArrowRight } from "lucide-react";
+import BrandMark from "./BrandMark";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -9,75 +10,81 @@ type PageHeroProps = {
   image?: string;
   cta?: { label: string; href: string };
   ctaSecondary?: { label: string; href: string };
+  compact?: boolean;
 };
 
 export default function PageHero({
   eyebrow,
   title,
   description,
-  image = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80",
+  image = "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=80",
   cta,
   ctaSecondary,
+  compact = false,
 }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden lg:min-h-[420px] lg:max-h-[480px]">
-      <div className="absolute inset-0">
-        <Image
-          src={image}
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(1,13,56,0.94)_0%,rgba(1,21,82,0.82)_48%,rgba(0,109,194,0.55)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(78,163,42,0.22),transparent_45%)]" />
-      </div>
+    <section id="page-hero" className="relative overflow-hidden bg-industrial-dark text-white">
+      <Image
+        src={image}
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,8,0.9)_0%,rgba(8,8,8,0.68)_52%,rgba(8,8,8,0.4)_100%)]" />
 
       <div
-        aria-hidden
-        className="pointer-events-none absolute -right-10 bottom-0 hidden h-0 w-0 border-b-[100px] border-l-[100px] border-b-ems-green/90 border-l-transparent sm:block"
-      />
-      <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-ems-blue via-ems-cyan to-ems-green" />
-
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 py-12 sm:px-6 sm:py-16 lg:min-h-[420px] lg:px-8 lg:py-20">
-        <div className="hero-animate mb-4 flex flex-wrap items-center gap-2 text-[12px] text-white/50 sm:mb-5 sm:text-[13px]">
+        className={`relative mx-auto flex max-w-6xl flex-col justify-end px-5 sm:px-8 ${
+          compact
+            ? "min-h-[220px] py-8 sm:min-h-[260px] sm:py-10"
+            : "min-h-[420px] py-16 sm:py-20 lg:min-h-[520px]"
+        }`}
+      >
+        <p className={`inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.28em] text-white/70 ${compact ? "mb-3" : "mb-5"}`}>
+          <BrandMark className="h-3.5 w-3.5" color="currentColor" />
           <Link href="/" className="transition hover:text-white">
             Home
           </Link>
           <span className="text-white/30">/</span>
-          <span className="text-white/80">{eyebrow}</span>
-        </div>
-
-        <p className="hero-animate hero-animate-delay-1 mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ems-green sm:text-xs">
-          {eyebrow}
+          <span>{eyebrow}</span>
         </p>
-        <h1 className="hero-animate hero-animate-delay-2 max-w-3xl text-[1.75rem] font-bold leading-[1.15] text-white sm:text-4xl lg:text-[2.85rem]">
+        <h1
+          className={`font-display max-w-3xl font-medium uppercase leading-[0.95] tracking-[0.02em] ${
+            compact
+              ? "text-[2rem] sm:text-4xl"
+              : "text-[2.4rem] sm:text-5xl lg:text-[4.2rem]"
+          }`}
+        >
           {title}
         </h1>
         {description ? (
-          <p className="hero-animate hero-animate-delay-3 mt-3 max-w-xl text-[14px] leading-[1.75] text-white/70 sm:mt-4 sm:text-[15px]">
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70">
             {description}
           </p>
         ) : null}
-
-        {(cta || ctaSecondary) && (
-          <div className="hero-animate hero-animate-delay-4 mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+        {cta || ctaSecondary ? (
+          <div className={`flex flex-wrap gap-3 ${compact ? "mt-5" : "mt-8"}`}>
             {cta ? (
-              <Button href={cta.href} className="w-full rounded-md px-7 py-3 sm:w-auto">
+              <Link
+                href={cta.href}
+                className="logo-grad inline-flex items-center gap-2 px-6 py-3.5 text-[13px] font-medium tracking-wide text-white transition"
+              >
                 {cta.label}
-              </Button>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             ) : null}
             {ctaSecondary ? (
               <Link
                 href={ctaSecondary.href}
-                className="inline-flex w-full items-center justify-center rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 sm:w-auto"
+                className="inline-flex items-center gap-2 border border-white/30 px-6 py-3.5 text-[13px] font-medium tracking-wide text-white transition hover:border-white hover:bg-white hover:text-black"
               >
                 {ctaSecondary.label}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             ) : null}
           </div>
-        )}
+        ) : null}
       </div>
     </section>
   );

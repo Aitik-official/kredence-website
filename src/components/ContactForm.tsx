@@ -51,174 +51,114 @@ export default function ContactForm() {
     }
   }
 
-  return (
-    <section className="relative overflow-hidden bg-[#f4f8fc] py-8 sm:py-12 lg:py-20">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,transparent_48%,#e8f1f8_48%,#e8f1f8_62%,transparent_62%)] opacity-70"
-      />
+  const field =
+    "w-full border border-[#e6e6e6] bg-white px-4 py-3.5 text-[14px] text-industrial-ink outline-none placeholder:text-[#9a9a9a] focus:border-industrial-ink";
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mb-8">
-          <div className="mb-3 flex flex-wrap items-center gap-2 text-[13px] text-[#8a9bb0]">
-            <Link href="/" className="transition hover:text-ems-navy">
+  return (
+    <section className="bg-white">
+      <div className="mx-auto grid max-w-6xl lg:grid-cols-[0.9fr_1.1fr]">
+        <Reveal className="bg-industrial-dark px-5 py-16 text-white sm:px-8 sm:py-20 lg:py-24">
+          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.28em] text-industrial-steel">
+            <Link href="/" className="text-white/50 hover:text-white">
               Home
             </Link>
-            <span>/</span>
-            <span className="text-ems-navy">Contact</span>
+            <span className="mx-2 text-white/30">/</span>
+            Contact
+          </p>
+          <h1 className="font-display text-[2.2rem] font-medium uppercase leading-[0.98] tracking-[0.02em] sm:text-[2.8rem]">
+            Connect with us
+          </h1>
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/70">
+            Tell us the fence or metal product and quantity. Kredence Steel
+            Trading will confirm availability.
+          </p>
+          <div className="mt-10 space-y-6 text-[14px]">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                Office
+              </p>
+              <a
+                href={site.address.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block leading-snug text-white/85 hover:text-white"
+              >
+                {site.address.full}
+              </a>
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                Email
+              </p>
+              <a
+                href={`mailto:${site.email}`}
+                className="mt-1 block text-white/85 hover:text-white"
+              >
+                {site.email}
+              </a>
+            </div>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                Phone
+              </p>
+              <a href={site.phoneHref} className="mt-1 block text-white/85 hover:text-white">
+                {site.phone}
+              </a>
+            </div>
           </div>
         </Reveal>
 
-        <div className="grid overflow-hidden rounded-2xl border border-[#d5e2f0] bg-white shadow-[0_20px_50px_rgba(1,21,82,0.06)] lg:grid-cols-2">
-          <Reveal
-            variant="left"
-            className="bg-[#011552] p-5 text-white sm:p-10 lg:p-12"
-          >
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-ems-green">
-              Contact
-            </p>
-            <h1 className="mb-4 text-[1.65rem] font-bold leading-tight sm:text-4xl">
-              Tell us the facility.
-              <br />
-              We&apos;ll outline the next step.
-            </h1>
-            <p className="mb-10 text-[15px] leading-relaxed text-white/65">
-              Infrastructure, co-working, or a complete supply list — write to
-              us or call. A specialist will respond with a clear path forward.
-            </p>
-            <div className="space-y-6 text-[15px]">
-              <div>
-                <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-ems-green">
-                  Office
-                </p>
-                <a
-                  href={site.address.maps}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="leading-snug text-white/90 transition hover:text-ems-cyan"
-                >
-                  {site.address.full}
-                </a>
-              </div>
-              <div>
-                <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-ems-green">
-                  Email
-                </p>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="text-white/90 transition hover:text-ems-cyan"
-                >
-                  {site.email}
-                </a>
-              </div>
-              <div>
-                <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-ems-green">
-                  Phone
-                </p>
-                <a
-                  href={site.phoneHref}
-                  className="text-white/90 transition hover:text-ems-cyan"
-                >
-                  {site.phone}
-                </a>
-              </div>
-              <div>
-                <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-ems-green">
-                  WhatsApp
-                </p>
-                <a
-                  href={site.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/90 transition hover:text-ems-cyan"
-                >
-                  Message the team
-                </a>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal variant="right" delay={100} className="p-5 sm:p-10 lg:p-12">
-            <form onSubmit={onSubmit}>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1A2432]">
-                Name
-              </label>
-              <input
-                name="name"
-                required
-                placeholder="Full name"
-                className="mb-6 w-full border-0 border-b border-[#d5e2f0] bg-transparent py-3 text-[15px] outline-none transition focus:border-ems-cyan"
-              />
-
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1A2432]">
-                Email
-              </label>
-              <input
-                name="email"
-                type="email"
-                required
-                placeholder="work email"
-                className="mb-6 w-full border-0 border-b border-[#d5e2f0] bg-transparent py-3 text-[15px] outline-none transition focus:border-ems-cyan"
-              />
-
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1A2432]">
-                Mobile number
-              </label>
-              <input
-                name="phone"
-                type="tel"
-                required
-                inputMode="tel"
-                placeholder="10-digit mobile number"
-                pattern="[0-9+\-\s]{8,15}"
-                className="mb-6 w-full border-0 border-b border-[#d5e2f0] bg-transparent py-3 text-[15px] outline-none transition focus:border-ems-cyan"
-              />
-
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1A2432]">
-                Requirement
-              </label>
-              <select
-                name="need"
-                required
-                className="mb-6 w-full border-0 border-b border-[#d5e2f0] bg-transparent py-3 text-[15px] outline-none transition focus:border-ems-cyan"
-              >
-                {contactNeeds.map((need) => (
-                  <option key={need} value={need}>
-                    {need}
-                  </option>
-                ))}
-              </select>
-
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.1em] text-[#1A2432]">
-                Project note
-              </label>
-              <textarea
-                name="message"
-                placeholder="City, timeline, and what you need operational."
-                className="mb-8 min-h-[100px] w-full resize-y border-0 border-b border-[#d5e2f0] bg-transparent py-3 text-[15px] outline-none transition focus:border-ems-cyan"
-              />
-
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="inline-flex w-full items-center justify-center rounded-md ems-grad px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-              >
-                {status === "loading" ? "Sending…" : "Send enquiry"}
-              </button>
-
-              {status === "success" ? (
-                <p className="mt-4 text-sm font-medium text-ems-green">
-                  Enquiry sent to {site.email}. We&apos;ll get back to you soon.
-                </p>
-              ) : null}
-              {status === "error" ? (
-                <p className="mt-4 text-sm font-medium text-red-600">
-                  {errorMessage}
-                </p>
-              ) : null}
-            </form>
-          </Reveal>
-        </div>
+        <Reveal delay={80} className="px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+          <form onSubmit={onSubmit} className="grid gap-4">
+            <input name="name" required placeholder="Full name*" className={field} />
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="Email address*"
+              className={field}
+            />
+            <input
+              name="phone"
+              type="tel"
+              required
+              inputMode="tel"
+              placeholder="Phone number*"
+              pattern="[0-9+\-\s]{8,15}"
+              className={field}
+            />
+            <select name="need" required className={field} defaultValue="">
+              <option value="" disabled>
+                Product*
+              </option>
+              {contactNeeds.map((need) => (
+                <option key={need} value={need}>
+                  {need}
+                </option>
+              ))}
+            </select>
+            <textarea
+              name="message"
+              placeholder="Quantity, site, and timeline"
+              className={`${field} min-h-[120px] resize-y`}
+            />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="logo-grad mt-2 inline-flex w-fit items-center justify-center px-7 py-3.5 text-[13px] font-medium tracking-wide text-white transition disabled:opacity-70"
+            >
+              {status === "loading" ? "Sending…" : "Send Message"}
+            </button>
+            {status === "success" ? (
+              <p className="text-sm text-industrial-ink">
+                Enquiry sent to {site.email}. We&apos;ll get back within 12 hours.
+              </p>
+            ) : null}
+            {status === "error" ? (
+              <p className="text-sm text-industrial-steel">{errorMessage}</p>
+            ) : null}
+          </form>
+        </Reveal>
       </div>
     </section>
   );

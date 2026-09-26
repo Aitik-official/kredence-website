@@ -40,13 +40,13 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
     const from =
-      process.env.RESEND_FROM ?? "EMS Website <onboarding@resend.dev>";
+      process.env.RESEND_FROM ?? "Kredence Steel <onboarding@resend.dev>";
 
     const { error } = await resend.emails.send({
       from,
       to: [site.email],
       replyTo: email,
-      subject: `EMS enquiry — ${need} — ${name}`,
+      subject: `Kredence Steel enquiry — ${need} — ${name}`,
       html: `
         <h2>New contact enquiry</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>

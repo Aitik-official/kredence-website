@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   Poppins,
   Playfair_Display,
-  Cormorant_Garamond,
+  Oswald,
   Michroma,
 } from "next/font/google";
 import { site } from "@/data/site";
@@ -22,11 +22,10 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const oswald = Oswald({
+  variable: "--font-oswald",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
 });
 
 /** Matches the geometric extended “eratic” wordmark in the logo */
@@ -43,9 +42,9 @@ export const metadata: Metadata = {
   },
   description: site.description,
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    apple: [{ url: "/logo.png", type: "image/png" }],
-    shortcut: "/logo.png",
+    icon: [{ url: "/logo/kredence_logo-removebg-preview.png", type: "image/png" }],
+    apple: [{ url: "/logo/kredence_logo-removebg-preview.png", type: "image/png" }],
+    shortcut: "/logo/kredence_logo-removebg-preview.png",
   },
 };
 
@@ -57,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${playfair.variable} ${cormorant.variable} ${michroma.variable} h-full`}
+      className={`${poppins.variable} ${playfair.variable} ${oswald.variable} ${michroma.variable} h-full`}
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
         <SiteShell>{children}</SiteShell>

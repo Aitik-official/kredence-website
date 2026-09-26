@@ -13,16 +13,34 @@
   --ems-soft-strong: #dceef8;
   --ems-grad: linear-gradient(90deg, #006dc2 0%, #03abab 52%, #4ea32a 100%);
 
-  /* Keep existing class names; map to EMS colors */
-  --finbiz-red: #03abab;
-  --finbiz-red-dark: #028a8a;
-  --finbiz-navy: #011552;
-  --finbiz-navy-soft: #0a2a6b;
-  --finbiz-gray: #5a6f8f;
-  --finbiz-muted: #f4f8fc;
-  --finbiz-pink: #e8f6f6;
+  /* Logo steel palette, in a few shades. */
+  --industrial-red: #2f6486;
+  --industrial-red-dark: #234c66;
+  --industrial-ink: #3a4348;
+  --industrial-muted: #6b757a;
+  --industrial-line: #e1e6e8;
+  --industrial-soft: #f3f5f6;
+  --industrial-panel: #e7ebed;
+  --industrial-dark: #17323d;
+  --industrial-steel: #3b6e8e;
+  --industrial-steel-dark: #245670;
+  --industrial-steel-light: #6e9bb4;
+  --industrial-mist: #f3f6f8;
+  --industrial-blue: #e4f0f6;
+  --industrial-slate: #d3e3ec;
+  --industrial-footer: #c5d6e0;
+  --industrial-footer-bar: #b4c9d5;
+
+  /* Keep existing class names; accents follow the logo steel. */
+  --finbiz-red: #3b6e8e;
+  --finbiz-red-dark: #245670;
+  --finbiz-navy: #1c2529;
+  --finbiz-navy-soft: #243033;
+  --finbiz-gray: #6b757a;
+  --finbiz-muted: #f3f5f6;
+  --finbiz-pink: #fdeeee;
   --background: #ffffff;
-  --foreground: #011552;
+  --foreground: #3a4348;
 }
 
 @theme inline {
@@ -41,14 +59,39 @@
   --color-ems-green: var(--ems-green);
   --color-ems-soft: var(--ems-soft);
   --color-ems-muted: var(--ems-muted);
+  --color-industrial-red: var(--industrial-red);
+  --color-industrial-red-dark: var(--industrial-red-dark);
+  --color-industrial-ink: var(--industrial-ink);
+  --color-industrial-muted: var(--industrial-muted);
+  --color-industrial-line: var(--industrial-line);
+  --color-industrial-soft: var(--industrial-soft);
+  --color-industrial-panel: var(--industrial-panel);
+  --color-industrial-dark: var(--industrial-dark);
+  --color-industrial-steel: var(--industrial-steel);
+  --color-industrial-steel-dark: var(--industrial-steel-dark);
+  --color-industrial-steel-light: var(--industrial-steel-light);
+  --color-industrial-mist: var(--industrial-mist);
+  --color-industrial-blue: var(--industrial-blue);
+  --color-industrial-slate: var(--industrial-slate);
+  --color-industrial-footer: var(--industrial-footer);
+  --color-industrial-footer-bar: var(--industrial-footer-bar);
   --font-sans: var(--font-poppins);
   --font-serif: var(--font-playfair);
-  --font-display: var(--font-cormorant);
+  --font-display: var(--font-oswald);
   --font-brand: var(--font-michroma);
 }
 
 * {
   box-sizing: border-box;
+}
+
+.logo-grad {
+  background-image: linear-gradient(145deg, #17323d 0%, #245670 46%, #3b6e8e 100%);
+  color: #fff;
+}
+
+.logo-grad:hover {
+  background-image: linear-gradient(145deg, #1c4252 0%, #2c6a86 50%, #4a86aa 100%);
 }
 
 html {
@@ -111,6 +154,25 @@ body {
   to {
     transform: translateX(-50%);
   }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.service-row-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.pricing-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.08) 0,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1px,
+    transparent 8px
+  );
 }
 
 /* Section reveal animations */
@@ -177,6 +239,32 @@ body {
   animation-delay: 0.48s;
 }
 
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-ken {
+  animation: kenburns 9s ease-out forwards;
+}
+
+.draw-line {
+  height: 2px;
+  width: 3.5rem;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--industrial-steel);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible .draw-line {
+  transform: scaleX(1);
+}
+
 /* Interactive card lift */
 .card-lift {
   transition:
@@ -201,9 +289,16 @@ body {
     transition: none;
   }
 
-  .hero-animate {
+  .hero-animate,
+  .hero-ken {
     opacity: 1;
     animation: none;
+  }
+
+  .draw-line,
+  .reveal.is-visible .draw-line {
+    transform: none;
+    transition: none;
   }
 
   .card-lift,

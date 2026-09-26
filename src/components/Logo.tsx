@@ -7,57 +7,22 @@ type LogoProps = {
   light?: boolean;
 };
 
-export default function Logo({ compact = false, light = false }: LogoProps) {
+export default function Logo({ light = false }: LogoProps) {
   return (
-    <Link href="/" className="flex items-center gap-2.5">
-      <span className="relative block h-[56px] w-[56px] shrink-0 sm:h-[72px] sm:w-[72px] lg:h-[80px] lg:w-[80px]">
-        <Image
-          src={site.logo}
-          alt={site.name}
-          width={280}
-          height={280}
-          className={`h-full w-full object-contain object-center ${
-            light ? "brightness-0 invert" : ""
-          }`}
-          priority
-        />
-      </span>
-
-      {!compact ? (
-        <span
-          className={`flex min-w-0 items-center gap-2.5 border-l pl-2.5 ${
-            light ? "border-white/25" : "border-[#d5e2f0]"
-          }`}
-        >
-          <span className="min-w-0 leading-none">
-            <span className="flex flex-col gap-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-1.5">
-              <span
-                className={`font-brand text-[12px] font-bold lowercase tracking-[0.06em] sm:text-[14px] ${
-                  light ? "text-white" : "text-finbiz-navy"
-                }`}
-              >
-                eratic
-              </span>
-              <span
-                className={`text-[10px] font-semibold uppercase tracking-[0.1em] sm:text-[12px] sm:tracking-[0.12em] ${
-                  light
-                    ? "text-white/80"
-                    : "ems-grad-text text-transparent"
-                }`}
-              >
-                MULTISOLUTIONS
-              </span>
-            </span>
-            <span
-              className={`mt-1 hidden text-[8px] font-semibold uppercase tracking-[0.16em] sm:block ${
-                light ? "text-white/65" : "text-ems-cyan"
-              }`}
-            >
-              {site.tagline}
-            </span>
-          </span>
-        </span>
-      ) : null}
+    <Link
+      href="/"
+      className="block h-[calc(6rem*140/232)] overflow-hidden sm:h-[calc(7rem*140/232)]"
+    >
+      <Image
+        src={site.logo}
+        alt={site.name}
+        width={249}
+        height={232}
+        className={`h-24 w-auto max-w-none object-contain object-top sm:h-28 -mt-[calc(6rem*35/232)] sm:-mt-[calc(7rem*35/232)] ${
+          light ? "brightness-0 invert" : ""
+        }`}
+        priority
+      />
     </Link>
   );
 }

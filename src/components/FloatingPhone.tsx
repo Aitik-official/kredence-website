@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { site } from "@/data/site";
+import BackToTop from "./BackToTop";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -12,7 +13,8 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function FloatingPhone() {
   return (
-    <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(0.75rem,env(safe-area-inset-right))] z-50 flex flex-col gap-2.5 sm:bottom-6 sm:right-6 sm:gap-3">
+    <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(0.75rem,env(safe-area-inset-right))] z-50 flex flex-col items-center gap-2.5 sm:bottom-6 sm:right-6 sm:gap-3">
+      <BackToTop />
       <a
         href={site.whatsapp}
         target="_blank"
@@ -25,7 +27,7 @@ export default function FloatingPhone() {
       <a
         href={site.phoneHref}
         aria-label={`Call ${site.phone}`}
-        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-ems-cyan bg-white text-ems-cyan shadow-lg transition hover:bg-ems-cyan hover:text-white sm:h-14 sm:w-14"
+        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-industrial-steel bg-white text-industrial-steel shadow-lg transition hover:bg-industrial-steel hover:text-white sm:h-14 sm:w-14"
       >
         <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
       </a>

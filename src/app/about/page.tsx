@@ -1,31 +1,28 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import About from "@/components/About";
-import Stats from "@/components/Stats";
-import Team from "@/components/Team";
-import CtaBanner from "@/components/CtaBanner";
+import HeroPin from "@/components/HeroPin";
+import AboutPageContent from "@/components/AboutPage";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Who we are at Eratic Multi Solution LLP — one-click infrastructure setup since 2023.",
+    "Kredence Steel Trading supplies fencing systems and coated metal products for construction and industrial projects.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Who we are"
-        title="About Eratic Multi Solution"
-        description="Purpose and quality drive everything we do. Since 2023, our mission has been simple: provide a one-click solution to set up infrastructure."
-        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80"
-        cta={{ label: "View Our Services", href: "/services" }}
-        ctaSecondary={{ label: "Contact Us", href: "/contact" }}
-      />
-      <About />
-      <Stats />
-      <Team />
-      <CtaBanner />
+      <HeroPin variant="compact">
+        <PageHero
+          eyebrow="About"
+          title="About"
+          image="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1800&q=80"
+          compact
+        />
+      </HeroPin>
+      <div className="relative z-10">
+        <AboutPageContent />
+      </div>
     </>
   );
 }
