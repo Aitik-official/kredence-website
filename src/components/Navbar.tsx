@@ -68,7 +68,7 @@ export default function Navbar() {
         setPastHero(true);
         return;
       }
-      setPastHero(y > window.innerHeight * 0.65);
+      setPastHero(y > (window.innerWidth < 1024 ? 180 : window.innerHeight * 0.65));
     }
     update();
     window.addEventListener("scroll", update, { passive: true, capture: true });
@@ -94,7 +94,7 @@ export default function Navbar() {
   return (
     <>
     <header className={`z-50 transition-colors duration-300 ${headerClass}`}>
-      <div className="relative mx-auto flex max-w-7xl items-center gap-3 px-3 py-2 sm:gap-5 sm:px-6 lg:gap-8 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-[90rem] items-center gap-3 px-6 py-2 sm:gap-5 sm:px-10 lg:gap-8 lg:px-14">
         <div className="shrink-0">
           <Logo light={!solidNav} />
         </div>
@@ -240,7 +240,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        <div className="flex shrink-0 items-center">
+        <div className="ml-auto flex shrink-0 items-center xl:hidden">
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -249,7 +249,11 @@ export default function Navbar() {
               setOpen((v) => !v);
               setMobileServicesOpen(false);
             }}
-            className="logo-grad flex h-11 w-11 items-center justify-center text-white transition xl:hidden"
+            className={`flex h-10 w-10 items-center justify-center transition ${
+              solidNav
+                ? "border border-[#e6e6e6] bg-industrial-soft text-industrial-ink hover:bg-industrial-panel"
+                : "border border-white/25 bg-transparent text-white hover:bg-white/15"
+            }`}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

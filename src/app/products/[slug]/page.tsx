@@ -50,10 +50,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <article className="bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
-        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14 xl:max-w-7xl">
+        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
-            <div className="mb-4 flex items-center gap-3">
+            <div className="mb-4 flex flex-wrap items-center gap-2 sm:gap-3">
               <ProductBack fallback={`/services?tab=${group.id}`} />
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#8a8a8a]">
                 <Link href="/services" className="transition hover:text-industrial-steel">

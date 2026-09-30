@@ -9,6 +9,7 @@ import { clients, partners } from "@/data/site";
 const AUTO_MS = 4000;
 
 function visibleCount(width: number) {
+  if (width >= 1280) return 5;
   if (width >= 1024) return 4;
   if (width >= 640) return 3;
   return 2;
@@ -57,16 +58,20 @@ export default function Clients({
   return (
     <section
       id="clients"
-      className={`bg-industrial-panel ${fit ? "flex min-h-[100svh] flex-col justify-center py-16" : "py-16 sm:py-20 lg:py-24"}`}
+      className={`bg-industrial-panel ${
+        fit
+          ? "flex min-h-0 lg:min-h-[100svh] flex-col justify-center py-12 sm:py-16 lg:py-20 xl:py-24"
+          : "py-14 sm:py-18 lg:py-24 xl:py-28"
+      }`}
     >
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl">
         {showHeading ? (
-          <Reveal className="mb-12 text-center sm:mb-14">
-            <p className="mb-3 inline-flex items-center justify-center gap-2 text-[11px] font-medium uppercase tracking-[0.28em] text-industrial-steel">
+          <Reveal className="mb-8 text-center sm:mb-12 sm:text-center">
+            <p className="mb-2.5 inline-flex items-center justify-center gap-2 text-[11px] font-medium uppercase tracking-[0.28em] text-industrial-steel sm:mb-3">
               <BrandMark className="h-3.5 w-3.5" color="currentColor" />
               {partners.eyebrow}
             </p>
-            <h2 className="font-display text-[1.7rem] font-medium uppercase leading-tight tracking-[0.03em] text-industrial-ink sm:text-[2.35rem]">
+            <h2 className="font-display text-[1.65rem] font-medium uppercase leading-tight tracking-[0.03em] text-industrial-ink sm:text-[2.1rem] lg:text-[2.35rem]">
               {partners.title}
             </h2>
           </Reveal>

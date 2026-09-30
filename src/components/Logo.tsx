@@ -9,16 +9,13 @@ type LogoProps = {
 
 export default function Logo({ light = false }: LogoProps) {
   return (
-    <Link
-      href="/"
-      className="block h-[calc(6rem*140/232)] overflow-hidden sm:h-[calc(7rem*140/232)]"
-    >
+    <Link href="/" className="flex items-center">
       <Image
         src={site.logo}
         alt={site.name}
-        width={249}
-        height={232}
-        className={`h-24 w-auto max-w-none object-contain object-top sm:h-28 -mt-[calc(6rem*35/232)] sm:-mt-[calc(7rem*35/232)] ${
+        width={220}
+        height={90}
+        className={`h-11 sm:h-13 lg:h-14 w-auto object-contain transition ${
           light ? "brightness-0 invert" : ""
         }`}
         priority

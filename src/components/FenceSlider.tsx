@@ -14,7 +14,9 @@ type FenceItem = {
 };
 
 function visibleCount(width: number) {
-  return width >= 640 ? 2 : 1;
+  if (width >= 1024) return 3;
+  if (width >= 640) return 2;
+  return 1;
 }
 
 export default function FenceSlider({ items }: { items: readonly FenceItem[] }) {
@@ -61,7 +63,7 @@ export default function FenceSlider({ items }: { items: readonly FenceItem[] }) 
         type="button"
         aria-label="Previous fence products"
         onClick={() => go(-1)}
-        className="absolute top-1/2 left-0 z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#e4e4e4] bg-white text-industrial-ink transition hover:border-industrial-steel hover:text-industrial-steel"
+        className="absolute top-1/2 left-0 z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-[#e4e4e4] bg-white text-industrial-ink transition hover:border-industrial-steel hover:text-industrial-steel shadow-sm"
       >
         <ChevronLeft className="h-4 w-4" />
       </button>
@@ -80,26 +82,26 @@ export default function FenceSlider({ items }: { items: readonly FenceItem[] }) 
               >
                 <Link
                   href={`/products/${item.slug}`}
-                  className="card-lift group relative block h-52 overflow-hidden bg-industrial-dark sm:h-60"
+                  className="card-lift group relative block h-56 overflow-hidden bg-industrial-dark sm:h-64 lg:h-72"
                 >
                   <div
                     aria-hidden
                     className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
                     style={{ backgroundImage: `url(${item.image})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
                   <span className="logo-grad absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
 
-                  <span className="absolute top-5 left-5 font-display text-sm tracking-[0.2em] text-white/80">
+                  <span className="absolute top-4 left-4 font-display text-xs tracking-[0.2em] text-white/80 sm:top-5 sm:left-5 sm:text-sm">
                     0{itemIndex + 1}
                   </span>
 
-                  <span className="absolute inset-x-0 bottom-0 p-6">
-                    <span className="mb-3 block h-px w-10 bg-industrial-steel-light" />
-                    <span className="block font-display text-xl font-medium uppercase leading-snug tracking-[0.04em] text-white">
+                  <span className="absolute inset-x-0 bottom-0 p-4 sm:p-5 lg:p-6">
+                    <span className="mb-2 block h-px w-8 bg-industrial-steel-light sm:mb-3 sm:w-10" />
+                    <span className="block font-display text-lg font-medium uppercase leading-snug tracking-[0.04em] text-white sm:text-xl">
                       {item.title}
                     </span>
-                    <span className="mt-2 block max-w-sm text-sm leading-relaxed text-white/75">
+                    <span className="mt-1.5 line-clamp-2 block max-w-sm text-xs leading-relaxed text-white/75 sm:text-sm">
                       {item.description}
                     </span>
                   </span>

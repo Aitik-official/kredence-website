@@ -20,7 +20,7 @@ export const site = {
     full: "Dubai, Abu Dhabi, UAE",
     maps: "https://www.google.com/maps/search/?api=1&query=Dubai+Abu+Dhabi+UAE",
   },
-  logo: "/logo/kredence_logo-removebg-preview.png",
+  logo: "/logo/krednce-logog-removebg-preview.png",
   heroImage: "/image.png",
 } as const;
 

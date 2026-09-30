@@ -1,4 +1,5 @@
-import { Phone } from "lucide-react";
+import Link from "next/link";
+import { Mail, Phone } from "lucide-react";
 import { site } from "@/data/site";
 import BackToTop from "./BackToTop";
 
@@ -15,6 +16,14 @@ export default function FloatingPhone() {
   return (
     <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(0.75rem,env(safe-area-inset-right))] z-50 flex flex-col items-center gap-2.5 sm:bottom-6 sm:right-6 sm:gap-3">
       <BackToTop />
+      <Link
+        href="/contact"
+        aria-label="Contact Us & Request Quote"
+        title="Contact Us / Request Quote"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-industrial-dark text-white border-2 border-industrial-steel-light/50 shadow-[0_12px_28px_rgba(23,50,61,0.35)] transition hover:bg-industrial-steel hover:scale-105 sm:h-14 sm:w-14"
+      >
+        <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
+      </Link>
       <a
         href={site.whatsapp}
         target="_blank"

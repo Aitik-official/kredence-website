@@ -56,23 +56,23 @@ export default function ContactForm() {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto grid max-w-6xl lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal className="bg-industrial-dark px-5 py-16 text-white sm:px-8 sm:py-20 lg:py-24">
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.28em] text-industrial-steel">
+      <div className="mx-auto grid max-w-6xl lg:grid-cols-[0.9fr_1.1fr] xl:max-w-7xl">
+        <Reveal className="bg-industrial-dark px-4 py-12 text-white sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:py-24">
+          <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.28em] text-industrial-steel sm:mb-4">
             <Link href="/" className="text-white/50 hover:text-white">
               Home
             </Link>
             <span className="mx-2 text-white/30">/</span>
             Contact
           </p>
-          <h1 className="font-display text-[2.2rem] font-medium uppercase leading-[0.98] tracking-[0.02em] sm:text-[2.8rem]">
+          <h1 className="font-display text-[2rem] font-medium uppercase leading-[0.98] tracking-[0.02em] sm:text-[2.6rem] lg:text-[2.8rem]">
             Connect with us
           </h1>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/70">
+          <p className="mt-4 max-w-md text-[14px] leading-relaxed text-white/70 sm:mt-5 sm:text-[15px]">
             Tell us the fence or metal product and quantity. Kredence Steel
             Trading will confirm availability.
           </p>
-          <div className="mt-10 space-y-6 text-[14px]">
+          <div className="mt-8 space-y-5 text-[14px] sm:mt-10 sm:space-y-6">
             <div>
               <p className="text-[11px] uppercase tracking-[0.18em] text-white/40">
                 Office
@@ -108,7 +108,7 @@ export default function ContactForm() {
           </div>
         </Reveal>
 
-        <Reveal delay={80} className="px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+        <Reveal delay={80} className="px-4 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20 xl:py-24">
           <form onSubmit={onSubmit} className="grid gap-4">
             <input name="name" required placeholder="Full name*" className={field} />
             <input

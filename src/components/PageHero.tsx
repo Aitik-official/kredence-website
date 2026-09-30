@@ -35,13 +35,13 @@ export default function PageHero({
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,8,0.9)_0%,rgba(8,8,8,0.68)_52%,rgba(8,8,8,0.4)_100%)]" />
 
       <div
-        className={`relative mx-auto flex max-w-6xl flex-col justify-end px-5 sm:px-8 ${
+        className={`relative mx-auto flex max-w-6xl flex-col justify-end px-4 sm:px-6 lg:px-8 xl:max-w-7xl ${
           compact
-            ? "min-h-[220px] py-8 sm:min-h-[260px] sm:py-10"
-            : "min-h-[420px] py-16 sm:py-20 lg:min-h-[520px]"
+            ? "min-h-[200px] py-6 sm:min-h-[240px] sm:py-8 lg:min-h-[260px] lg:py-10"
+            : "min-h-[380px] py-12 sm:min-h-[440px] sm:py-16 lg:min-h-[520px] lg:py-20"
         }`}
       >
-        <p className={`inline-flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.28em] text-white/70 ${compact ? "mb-3" : "mb-5"}`}>
+        <p className={`inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.28em] text-white/70 sm:gap-2.5 ${compact ? "mb-2.5 sm:mb-3" : "mb-4 sm:mb-5"}`}>
           <BrandMark className="h-3.5 w-3.5" color="currentColor" />
           <Link href="/" className="transition hover:text-white">
             Home
@@ -52,14 +52,14 @@ export default function PageHero({
         <h1
           className={`font-display max-w-3xl font-medium uppercase leading-[0.95] tracking-[0.02em] ${
             compact
-              ? "text-[2rem] sm:text-4xl"
-              : "text-[2.4rem] sm:text-5xl lg:text-[4.2rem]"
+              ? "text-[1.85rem] sm:text-3xl lg:text-4xl"
+              : "text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[4.2rem] xl:text-[4.8rem]"
           }`}
         >
           {title}
         </h1>
         {description ? (
-          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70">
+          <p className="mt-3.5 max-w-xl text-[14px] leading-relaxed text-white/70 sm:mt-5 sm:text-[15px] lg:text-base">
             {description}
           </p>
         ) : null}

@@ -39,15 +39,15 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="relative min-h-[320px] bg-industrial-dark sm:min-h-[420px]">
         <Image src={post.image} alt={post.title} fill className="object-cover" priority sizes="100vw" />
         <div className="absolute inset-0 bg-black/45" />
-        <div className="relative mx-auto flex min-h-[320px] max-w-3xl flex-col justify-end px-5 py-12 sm:min-h-[420px] sm:px-8">
+        <div className="relative mx-auto flex min-h-[300px] max-w-4xl flex-col justify-end px-4 py-10 sm:min-h-[420px] sm:px-6 lg:px-8 sm:py-12">
           <Link
             href="/blogs"
-            className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70 hover:text-white"
+            className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70 hover:text-white sm:mb-4"
           >
             Blogs
           </Link>
           <p className="text-[12px] uppercase tracking-[0.16em] text-white/70">{formatDate(post.date)}</p>
-          <h1 className="font-display mt-3 text-3xl font-medium uppercase leading-[1.05] text-white sm:text-5xl">
+          <h1 className="font-display mt-2.5 text-2xl font-medium uppercase leading-[1.05] text-white sm:mt-3 sm:text-4xl lg:text-5xl">
             {post.title}
           </h1>
         </div>
@@ -55,7 +55,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       </HeroPin>
 
       <div className="relative z-10 bg-white">
-      <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
         <p className="text-lg leading-relaxed text-industrial-ink">{post.excerpt}</p>
         <div className="mt-8 space-y-5 text-[15px] leading-[1.85] whitespace-pre-line text-[#444]">
           {post.body}

@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { productGroups, site } from "@/data/site";
 
@@ -59,13 +59,13 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-[90rem] px-6 py-10 sm:px-10 lg:px-14">
         <div className="grid items-start gap-10 lg:grid-cols-3 lg:gap-8">
           <div>
-            <Link href="/" className="inline-flex bg-white px-4 py-3">
+            <Link href="/" className="inline-flex bg-white px-3.5 py-2.5 sm:px-4 sm:py-3">
               <Image
                 src={site.logo}
                 alt={site.name}
-                width={249}
-                height={232}
-                className="h-24 w-auto object-contain sm:h-28"
+                width={220}
+                height={90}
+                className="h-11 w-auto object-contain sm:h-13 lg:h-14"
               />
             </Link>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/70">

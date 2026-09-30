@@ -40,12 +40,12 @@ export default async function BlogsPage() {
           compact
         />
       </HeroPin>
-      <section className="relative z-10 bg-industrial-mist py-14 shadow-[0_-28px_50px_rgba(23,50,61,0.12)] sm:py-16">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <section className="relative z-10 bg-industrial-mist py-10 shadow-[0_-28px_50px_rgba(23,50,61,0.12)] sm:py-14 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 xl:max-w-7xl">
           {posts.length === 0 ? (
             <p className="text-[15px] text-[#666]">No posts yet.</p>
           ) : (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2">
               {posts.map((post) => (
                 <Link
                   key={post.id}
