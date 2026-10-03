@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" width="100%" height="100%">
+  <defs>
+    <path id="upper-curve-iaf" d="M 38 78 A 122 55 0 0 1 282 78" fill="none" />
+    <path id="lower-curve-iaf" d="M 42 78 A 120 54 0 0 0 278 78" fill="none" />
+  </defs>
+  <!-- Outer Blue Oval -->
+  <ellipse cx="160" cy="70" rx="150" ry="64" fill="#0b5c9e" stroke="#ffffff" stroke-width="3" />
+  
+  <!-- Globe Grid Lines -->
+  <!-- Longitude curves -->
+  <ellipse cx="160" cy="70" rx="100" ry="60" fill="none" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  <ellipse cx="160" cy="70" rx="55" ry="62" fill="none" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  <ellipse cx="160" cy="70" rx="15" ry="63" fill="none" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  <line x1="160" y1="8" x2="160" y2="132" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  <!-- Latitude lines -->
+  <ellipse cx="160" cy="40" rx="138" ry="14" fill="none" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  <ellipse cx="160" cy="70" rx="146" ry="16" fill="none" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  <ellipse cx="160" cy="100" rx="138" ry="14" fill="none" stroke="#5da9e9" stroke-width="1.2" opacity="0.6" />
+  
+  <!-- Upper Curve Text -->
+  <text font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1.5">
+    <textPath href="#upper-curve-iaf" startOffset="50%" text-anchor="middle">
+      MEMBER OF MULTILATERAL
+    </textPath>
+  </text>
+  
+  <!-- IAF Center Text -->
+  <text x="160" y="85" font-family="'Arial Black', Impact, sans-serif" font-size="54" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">IAF</text>
+  
+  <!-- Lower Curve Text -->
+  <text font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+    <textPath href="#lower-curve-iaf" startOffset="50%" text-anchor="middle">
+      RECOGNITION ARRANGEMENT
+    </textPath>
+  </text>
+</svg>

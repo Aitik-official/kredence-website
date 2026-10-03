@@ -40,6 +40,7 @@ export const navItems = [
       { label: "Metals", href: "/services?tab=metals" },
     ],
   },
+  { label: "Certificates", href: "/certificates" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ] as const;

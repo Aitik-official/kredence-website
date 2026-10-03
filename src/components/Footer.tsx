@@ -6,6 +6,7 @@ const pageLinks = [
   { label: "About Us", href: "/about" },
   { label: "Our Products", href: "/services" },
   { label: "Our Portfolio", href: "/clients" },
+  { label: "Certificates", href: "/certificates" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
@@ -131,6 +132,78 @@ export default function Footer() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Full-width Accreditation & ISO Benchmark Section using complete available spacing */}
+        <div className="mt-8 border-t border-white/15 pt-5">
+          <div className="mb-2.5 flex items-center justify-between">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+              Accreditations & Certified ISO Benchmarks
+            </p>
+            <Link
+              href="/certificates"
+              className="text-[11px] font-semibold text-industrial-steel-light underline-offset-4 hover:underline"
+            >
+              View All Certificates →
+            </Link>
+          </div>
+
+          <Link
+            href="/certificates"
+            className="group flex flex-col items-stretch justify-between gap-4 overflow-hidden border border-white/20 bg-white p-3 shadow-md transition hover:border-white hover:shadow-lg lg:flex-row lg:items-center lg:gap-6 lg:p-3.5"
+          >
+            {/* Left: IAF & EIAC Logo Image */}
+            <div className="relative h-12 w-48 shrink-0 sm:h-13 sm:w-56">
+              <Image
+                src="/logo/iaf.jpeg"
+                alt="IAF & EIAC Accreditations"
+                fill
+                className="object-contain object-left"
+                sizes="(max-width: 640px) 200px, 240px"
+              />
+            </div>
+
+            <div className="hidden h-10 w-px shrink-0 bg-[#e0e0e0] lg:block" />
+
+            {/* Right: ISO Standards in clean horizontal row side-by-side using full available spacing */}
+            <div className="grid flex-1 grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-4">
+              <div className="flex items-center gap-2.5 rounded-xs bg-[#f4f7f9] px-3.5 py-2 text-industrial-dark transition group-hover:bg-[#eaf1f5]">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-[#0b5c9e]" />
+                <div className="min-w-0">
+                  <p className="text-[12px] font-bold leading-tight tracking-tight text-industrial-ink">
+                    ISO 9001:2015
+                  </p>
+                  <p className="truncate text-[10px] text-[#666]">
+                    Quality Management System
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 rounded-xs bg-[#f4f7f9] px-3.5 py-2 text-industrial-dark transition group-hover:bg-[#eaf1f5]">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-[#047857]" />
+                <div className="min-w-0">
+                  <p className="text-[12px] font-bold leading-tight tracking-tight text-industrial-ink">
+                    ISO 14001:2015
+                  </p>
+                  <p className="truncate text-[10px] text-[#666]">
+                    Environmental Management
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 rounded-xs bg-[#f4f7f9] px-3.5 py-2 text-industrial-dark transition group-hover:bg-[#eaf1f5]">
+                <span className="h-2 w-2 shrink-0 rounded-full bg-[#b45309]" />
+                <div className="min-w-0">
+                  <p className="text-[12px] font-bold leading-tight tracking-tight text-industrial-ink">
+                    ISO 45001:2018
+                  </p>
+                  <p className="truncate text-[10px] text-[#666]">
+                    Occupational Health & Safety
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
 
         <div className="mt-8 space-y-4 border-t border-white/15 pt-6">

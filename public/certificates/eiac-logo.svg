@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 140" width="100%" height="100%">
+  <!-- EIAC Symbol & Wordmark -->
+  <g transform="translate(15, 10)">
+    <!-- 'e' -->
+    <path d="M 50 52 C 50 32 36 20 18 20 C -2 20 -14 34 -14 56 C -14 78 -1 92 19 92 C 34 92 46 84 50 72 L 35 72 C 32 78 26 82 19 82 C 4 82 -3 72 -3 58 L 50 58 C 50 56 50 54 50 52 Z M -2 48 C 0 36 8 30 18 30 C 28 30 36 36 38 48 L -2 48 Z" fill="#b98a3c" transform="translate(18, 0)" />
+    
+    <!-- 'i' with gold dots -->
+    <circle cx="102" cy="22" r="5.5" fill="#b98a3c" />
+    <circle cx="118" cy="22" r="5.5" fill="#b98a3c" />
+    <path d="M 110 36 L 110 90" stroke="#00127a" stroke-width="14" stroke-linecap="round" />
+    
+    <!-- 'a' -->
+    <path d="M 195 56 C 195 36 182 20 158 20 C 136 20 122 35 122 56 C 122 78 136 92 158 92 C 182 92 195 76 195 56 Z M 136 56 C 136 41 145 31 158 31 C 172 31 181 41 181 56 C 181 71 172 81 158 81 C 145 81 136 71 136 56 Z" fill="#00127a" />
+    
+    <!-- 'c' -->
+    <path d="M 268 36 L 254 44 C 248 35 240 30 228 30 C 212 30 200 42 200 56 C 200 70 212 82 228 82 C 240 82 249 76 255 67 L 269 75 C 260 88 246 94 228 94 C 203 94 186 77 186 56 C 186 35 204 18 228 18 C 246 18 259 25 268 36 Z" fill="#b98a3c" />
+    
+    <!-- 'l' -->
+    <rect x="286" y="16" width="13" height="74" rx="6.5" fill="#00127a" />
+    <rect x="306" y="24" width="10" height="66" rx="5" fill="#b98a3c" />
+  </g>
+  
+  <!-- Arabic text -->
+  <text x="180" y="116" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" font-weight="bold" fill="#00127a" text-anchor="middle" direction="rtl">
+    مركز الإمارات العالمي للاعتماد
+  </text>
+  <!-- English Subtitle -->
+  <text x="180" y="132" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600" fill="#333333" text-anchor="middle" letter-spacing="0.4">
+    Emirates International Accreditation Centre
+  </text>
+</svg>
