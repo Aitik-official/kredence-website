@@ -14,20 +14,13 @@ function SocialIcon({
   type,
   className,
 }: {
-  type: "x" | "youtube" | "instagram" | "globe";
+  type: "linkedin" | "instagram" | "facebook";
   className?: string;
 }) {
-  if (type === "x") {
+  if (type === "linkedin") {
     return (
       <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.992 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-      </svg>
-    );
-  }
-  if (type === "youtube") {
-    return (
-      <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z" />
+        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z" />
       </svg>
     );
   }
@@ -39,19 +32,17 @@ function SocialIcon({
     );
   }
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className} aria-hidden>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
     </svg>
   );
 }
 
 export default function Footer() {
   const social = [
-    { label: "X", href: site.whatsapp, type: "x" as const },
-    { label: "YouTube", href: site.whatsapp, type: "youtube" as const },
-    { label: "Instagram", href: site.whatsapp, type: "instagram" as const },
-    { label: "Website", href: "/", type: "globe" as const },
+    { label: "LinkedIn", href: site.social.linkedin, type: "linkedin" as const },
+    { label: "Instagram", href: site.social.instagram, type: "instagram" as const },
+    { label: "Facebook", href: site.social.facebook, type: "facebook" as const },
   ];
 
   return (

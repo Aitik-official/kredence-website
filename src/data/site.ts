@@ -18,7 +18,12 @@ export const site = {
     line2: "",
     line3: "",
     full: "Dubai, Abu Dhabi, UAE",
-    maps: "https://www.google.com/maps/search/?api=1&query=Dubai+Abu+Dhabi+UAE",
+    maps: "https://share.google/QTpD6j8sHv6G5qsWu",
+  },
+  social: {
+    linkedin: "https://www.linkedin.com/company/kredence-steel/",
+    instagram: "https://www.instagram.com/kredencesteel",
+    facebook: "https://www.facebook.com/profile.php?id=61592819913045",
   },
   logo: "/logo/krednce-logog-removebg-preview.png",
   heroImage: "/image.png",
@@ -202,7 +207,7 @@ export const productGroups = [
     label: "Metals",
     eyebrow: "Coated metals and roofing",
     description:
-      "Hot dip galvanized and pre-painted coils, insulated panels, corrugated sheets, decking, purlins, drywall, flashings, and GRP skylights.",
+      "Hot dip galvanized and pre-painted coils, sandwich panels, corrugated sheets, decking, purlins, drywall, flashings, and GRP skylights.",
     homeEyebrow: "Metals products",
     homeTitle: "Coils, sheets and roofing",
     homeSubtitle:
@@ -223,8 +228,8 @@ export const productGroups = [
           "Pre-painted galvanized steel coils in RAL colors, including RAL 9002 and RAL 1001.",
       },
       {
-        slug: "insulated-sandwich-panels",
-        title: "Insulated Sandwich Panels",
+        slug: "sandwich-panels",
+        title: "Sandwich Panels",
         image: "/products/sandwich-1.jpeg",
         description:
           "Roof, wall, and cold room panels with PUR and PIR insulation.",
@@ -308,7 +313,7 @@ export const serviceHighlights = {
     {
       title: "ROOFING, PURLINS & SANDWICH PANELS",
       description:
-        "Decking, Z and C purlins, insulated sandwich panels, flashings, gutters, and GRP skylight sheets.",
+        "Decking, Z and C purlins, sandwich panels, flashings, gutters, and GRP skylight sheets.",
       href: "/products/decking-sheets",
       image:
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80",
@@ -843,7 +848,7 @@ export const contactNeeds = [
   "Chain Link Fence",
   "GI Mill Finish Coils",
   "PPGI Color Coated Coils",
-  "Insulated Sandwich Panels",
+  "Sandwich Panels",
   "Corrugated Color Sheets",
   "Decking Sheets",
   "Z & C Purlins",

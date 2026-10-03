@@ -87,9 +87,20 @@ export const productDetails: Record<
       "Forms: coil, sheet, or slit coil",
     ],
   },
+  "sandwich-panels": {
+    images: ["/products/sandwich-1.jpeg", "/products/sandwich-2.jpeg"],
+    body: "Sandwich panels are a rigid core between two metal skins. The core is polyurethane (PUR) or polyisocyanurate (PIR) at 35 to 40 kg/m³. A typical build is a coated aluminium or GI top skin, a foam core, and a foil or shallow-rib liner. Profiled panels are made in 35, 50, 75, and 100 mm. Wall and flat panels are made in 50, 75, and 100 mm. Used for roofs, walls, prefabricated rooms, and cold stores.",
+    specs: [
+      "Profiled panel thickness: 35 mm, 50 mm, 75 mm, 100 mm",
+      "Wall and flat panel thickness: 50 mm, 75 mm, 100 mm",
+      "Top skin: aluminium or GI polyester coated",
+      "Core: PUR or PIR foam, 35 to 40 kg/m³",
+      "Liner: aluminium foil, or aluminium / GI polyester coated ribbed sheet",
+    ],
+  },
   "insulated-sandwich-panels": {
     images: ["/products/sandwich-1.jpeg", "/products/sandwich-2.jpeg"],
-    body: "Insulated sandwich panels are a rigid core between two metal skins. The core is polyurethane (PUR) or polyisocyanurate (PIR) at 35 to 40 kg/m³. A typical build is a coated aluminium or GI top skin, a foam core, and a foil or shallow-rib liner. Profiled panels are made in 35, 50, 75, and 100 mm. Wall and flat panels are made in 50, 75, and 100 mm. Used for roofs, walls, prefabricated rooms, and cold stores.",
+    body: "Sandwich panels are a rigid core between two metal skins. The core is polyurethane (PUR) or polyisocyanurate (PIR) at 35 to 40 kg/m³. A typical build is a coated aluminium or GI top skin, a foam core, and a foil or shallow-rib liner. Profiled panels are made in 35, 50, 75, and 100 mm. Wall and flat panels are made in 50, 75, and 100 mm. Used for roofs, walls, prefabricated rooms, and cold stores.",
     specs: [
       "Profiled panel thickness: 35 mm, 50 mm, 75 mm, 100 mm",
       "Wall and flat panel thickness: 50 mm, 75 mm, 100 mm",
@@ -130,7 +141,7 @@ export const productDetails: Record<
   },
   "z-c-purlins": {
     images: ["/products/purlins-1.jpg", "/products/purlins-2.jpg"],
-    body: "Z and C purlins for roof and wall framing, made from structural grade galvanized steel to ASTM A653 Grade 50 G90. They are secondary supports for roofing sheets, cladding, insulated panels, and liner trays, for spans up to 10 m. Joints use an overlap or a sleeve. Punching can be detailed to the drawing, and quick-fix anti-sag rods are available. Minimum yield strength is 350 N/mm².",
+    body: "Z and C purlins for roof and wall framing, made from structural grade galvanized steel to ASTM A653 Grade 50 G90. They are secondary supports for roofing sheets, cladding, sandwich panels, and liner trays, for spans up to 10 m. Joints use an overlap or a sleeve. Punching can be detailed to the drawing, and quick-fix anti-sag rods are available. Minimum yield strength is 350 N/mm².",
     specs: [
       "Material: ASTM A653 Grade 50 G90",
       "Also referenced: ASTM A446 Grade D G90, BS EN 10147 S350GD Z275 MAC",

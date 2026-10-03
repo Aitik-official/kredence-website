@@ -10,6 +10,17 @@ const AUTO_MS = 5000;
 
 const slides = [
   {
+    src: "/products/sandwich-1.jpeg",
+    alt: "High performance sandwich panels for roof and wall cladding",
+    eyebrow: "Building envelope solutions",
+    title1: "Sandwich",
+    title2: "panels",
+    description:
+      "High-performance PUR and PIR sandwich panels for roofs, walls, prefabricated structures, and temperature-controlled cold stores.",
+    href: "/products/sandwich-panels",
+    cta: "View products",
+  },
+  {
     src: "/products/fencing-1.jpeg",
     alt: "Corrugated metal sheets used for fencing panels and hoardings",
     eyebrow: "Premium fencing solutions",
@@ -57,38 +68,38 @@ const slides = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const slide = slides[index];
 
   const next = useCallback(() => {
-    setIndex((i) => (i === slides.length - 1 ? 0 : i + 1));
+    setIndex((i) => (i + 1) % slides.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setIndex((i) => (i - 1 + slides.length) % slides.length);
   }, []);
 
   useEffect(() => {
-    if (paused) return;
     const timer = window.setInterval(next, AUTO_MS);
     return () => window.clearInterval(timer);
-  }, [paused, next, index]);
+  }, [next, index]);
 
   return (
     <section
       id="hero"
       className="relative h-full min-h-[400px] overflow-hidden bg-industrial-dark text-white sm:min-h-[500px] lg:min-h-[100svh]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       {slides.map((item, i) => (
         <div
           key={item.src}
-          className={`absolute inset-0 transition-opacity duration-700 ease-out ${
-            i === index ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+            i === index ? "z-0 opacity-100" : "-z-10 opacity-0 pointer-events-none"
           }`}
         >
           <Image
             src={item.src}
             alt={item.alt}
             fill
-            priority={i === 0}
+            priority={i === 0 || i === 1}
             className={`object-cover object-center ${i === index ? "hero-ken" : ""}`}
             sizes="100vw"
           />
@@ -132,8 +143,8 @@ export default function Hero() {
                   type="button"
                   aria-label={`Show slide ${i + 1}`}
                   onClick={() => setIndex(i)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    i === index ? "w-6 sm:w-7 bg-white" : "w-1.5 bg-white/40"
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === index ? "w-6 sm:w-7 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
                   }`}
                 />
               ))}
