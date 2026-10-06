@@ -109,13 +109,27 @@ export const productDetails: Record<
       "Liner: aluminium foil, or aluminium / GI polyester coated ribbed sheet",
     ],
   },
+  "profile-roofing-sheets": {
+    images: [
+      "/products/corrugated-1.jpg",
+      "/products/corrugated-2.jpg",
+      "/products/corrugated-3.jpg",
+    ],
+    body: "Single skin profile roofing sheets for warehouse roofing and cladding. Profiles are sinusoidal, trapezoidal, and box. Sheets are made in the colour and length the site needs, in steel, aluminium, or plastic, with polyester, PVF2, or plastisol coatings. They are light to fix and stand up to weather.",
+    specs: [
+      "Profiles: sinusoidal, trapezoidal, box",
+      "38/200 sheeting: 1023 mm nominal, 1000 mm covering",
+      "Materials: steel, aluminium, plastic",
+      "Coatings: polyester, PVF2, plastisol",
+    ],
+  },
   "corrugated-color-sheets": {
     images: [
       "/products/corrugated-1.jpg",
       "/products/corrugated-2.jpg",
       "/products/corrugated-3.jpg",
     ],
-    body: "Single skin corrugated colour sheets for warehouse roofing and cladding. Profiles are sinusoidal, trapezoidal, and box. Sheets are made in the colour and length the site needs, in steel, aluminium, or plastic, with polyester, PVF2, or plastisol coatings. They are light to fix and stand up to weather.",
+    body: "Single skin profile roofing sheets for warehouse roofing and cladding. Profiles are sinusoidal, trapezoidal, and box. Sheets are made in the colour and length the site needs, in steel, aluminium, or plastic, with polyester, PVF2, or plastisol coatings. They are light to fix and stand up to weather.",
     specs: [
       "Profiles: sinusoidal, trapezoidal, box",
       "38/200 sheeting: 1023 mm nominal, 1000 mm covering",

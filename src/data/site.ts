@@ -14,11 +14,11 @@ export const site = {
   hours: "Mon – Fri: 9:00 AM – 6:00 PM\nSat: 9:00 AM – 2:00 PM\nSun: Closed",
   hoursShort: "Mon – Fri · 9:00 AM – 6:00 PM",
   address: {
-    line1: "Dubai, Abu Dhabi, UAE",
-    line2: "",
-    line3: "",
-    full: "Dubai, Abu Dhabi, UAE",
-    maps: "https://share.google/QTpD6j8sHv6G5qsWu",
+    line1: "SPC Free Zone, Entrance No. 2, Ground Floor",
+    line2: "Al Zahia Area, Sheikh Mohammed Bin Zayed Rd",
+    line3: "Sharjah, Dubai, UAE",
+    full: "Sharjah, Dubai, UAE — SPC Free Zone, Al Zahia Area, Entrance No. 2, Ground Floor, Sheikh Mohammed Bin Zayed Rd, Sharjah",
+    maps: "https://maps.google.com/?q=SPC+Free+Zone+Sharjah+UAE",
   },
   social: {
     linkedin: "https://www.linkedin.com/company/kredence-steel/",
@@ -208,7 +208,7 @@ export const productGroups = [
     label: "Metals",
     eyebrow: "Coated metals and roofing",
     description:
-      "Hot dip galvanized and pre-painted coils, sandwich panels, corrugated sheets, decking, purlins, drywall, flashings, and GRP skylights.",
+      "Hot dip galvanized and pre-painted coils, sandwich panels, profile roofing sheets, decking, purlins, drywall, flashings, and GRP skylights.",
     homeEyebrow: "Metals products",
     homeTitle: "Coils, sheets and roofing",
     homeSubtitle:
@@ -236,11 +236,11 @@ export const productGroups = [
           "Roof, wall, and cold room panels with PUR and PIR insulation.",
       },
       {
-        slug: "corrugated-color-sheets",
-        title: "Corrugated Color Sheets",
+        slug: "profile-roofing-sheets",
+        title: "Profile Roofing Sheets",
         image: "/products/corrugated-1.jpg",
         description:
-          "Single skin profile corrugated sheets in sinusoidal, trapezoidal, and box profiles.",
+          "Single skin profile roofing sheets in sinusoidal, trapezoidal, and box profiles.",
       },
       {
         slug: "decking-sheets",
@@ -850,7 +850,7 @@ export const contactNeeds = [
   "GI Mill Finish Coils",
   "PPGI Color Coated Coils",
   "Sandwich Panels",
-  "Corrugated Color Sheets",
+  "Profile Roofing Sheets",
   "Decking Sheets",
   "Z & C Purlins",
   "Drywall Partition Systems",

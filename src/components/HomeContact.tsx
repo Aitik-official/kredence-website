@@ -318,7 +318,7 @@ export default function HomeContact() {
           <div className="relative h-[380px] w-full sm:h-[440px] lg:h-[480px]">
             <iframe
               title="Kredence Steel Trading Location Map"
-              src="https://maps.google.com/maps?q=Dubai%2C%20United%20Arab%20Emirates&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=SPC%20Free%20Zone%2C%20Sharjah%2C%20United%20Arab%20Emirates&t=&z=14&ie=UTF8&iwloc=&output=embed"
               className="h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

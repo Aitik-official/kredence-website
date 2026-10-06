@@ -55,12 +55,12 @@ const slides = [
   },
   {
     src: "https://images.unsplash.com/photo-1756626524141-210fdbfd3ab2?auto=format&fit=crop&w=2000&q=80",
-    alt: "Corrugated metal roofing sheets",
+    alt: "Profile metal roofing sheets",
     eyebrow: "Roofing metals",
     title1: "Sheets, purlins",
     title2: "& roofing",
     description:
-      "Corrugated color sheets, decking, Z and C purlins, sandwich panels, flashings, gutters, and GRP skylight sheets.",
+      "Profile roofing sheets, decking, Z and C purlins, sandwich panels, flashings, gutters, and GRP skylight sheets.",
     href: "/services?tab=metals",
     cta: "View products",
   },
