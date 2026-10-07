@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Clock, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Download, ExternalLink, FileDown, FileText, Mail, MapPin, Phone } from "lucide-react";
 import BrandMark from "./BrandMark";
 import { homeContact, site } from "@/data/site";
 
@@ -164,6 +164,54 @@ export default function HomeContact() {
               </div>
             );
           })}
+
+          {/* Official Catalog & Brochure Downloads */}
+          <div className="border border-[#d2dce2] bg-white p-5 sm:p-6 shadow-[0_12px_28px_rgba(23,50,61,0.08)]">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-industrial-mist text-industrial-steel-dark">
+                <FileDown className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-industrial-steel">
+                  Downloads
+                </p>
+                <h4 className="font-display text-[14px] font-bold uppercase tracking-wide text-industrial-ink">
+                  Product Brochure & Profile
+                </h4>
+              </div>
+            </div>
+            <p className="mt-3 text-[13px] leading-relaxed text-[#666]">
+              Get our complete product catalog with technical profiles and specifications.
+            </p>
+            <div className="mt-4 flex flex-col gap-2.5">
+              <a
+                href={site.brochure}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Kredence_Brochure.pdf"
+                className="logo-grad inline-flex items-center justify-between px-4 py-3 text-[12px] font-semibold tracking-wide text-white shadow-xs transition hover:brightness-110"
+              >
+                <span className="flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  Download Brochure (PDF)
+                </span>
+                <Download className="h-3.5 w-3.5 opacity-85" />
+              </a>
+              <a
+                href={site.companyProfile}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Kredence_Steel_Trading_Company_Profile_V3.pdf"
+                className="inline-flex items-center justify-between border border-industrial-line bg-industrial-mist px-4 py-2.5 text-[12px] font-semibold tracking-wide text-industrial-ink transition hover:border-industrial-steel hover:bg-white hover:text-industrial-steel"
+              >
+                <span className="flex items-center gap-2">
+                  <FileText className="h-4 w-4 text-industrial-steel" />
+                  Company Profile (PDF)
+                </span>
+                <Download className="h-3.5 w-3.5 text-industrial-steel" />
+              </a>
+            </div>
+          </div>
 
           <div className="border border-white/40 bg-white/80 p-5 shadow-[0_10px_24px_rgba(23,50,61,0.06)] backdrop-blur-xs">
             <p className="text-[10.5px] font-medium uppercase tracking-[0.2em] text-industrial-steel">

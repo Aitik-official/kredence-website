@@ -27,6 +27,8 @@ export const site = {
   },
   logo: "/logo/krednce-logog-removebg-preview.png",
   heroImage: "/image.png",
+  brochure: "/brochure/Kredence%20Brochure%20.pdf",
+  companyProfile: "/brochure/Kredence_Steel_Trading_Company_Profile%20V3.pdf",
 } as const;
 
 export const navItems = [

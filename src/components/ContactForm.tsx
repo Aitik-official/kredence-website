@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { Download, FileDown, FileText } from "lucide-react";
 import { contactNeeds, site } from "@/data/site";
 import Reveal from "./Reveal";
 
@@ -104,6 +105,40 @@ export default function ContactForm() {
               <a href={site.phoneHref} className="mt-1 block text-white/85 hover:text-white">
                 {site.phone}
               </a>
+            </div>
+
+            <div className="border-t border-white/15 pt-5">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-white/40">
+                Downloads
+              </p>
+              <div className="mt-3 flex flex-col gap-2">
+                <a
+                  href={site.brochure}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Kredence_Brochure.pdf"
+                  className="inline-flex items-center justify-between rounded-xs border border-white/25 bg-white/10 px-3.5 py-2 text-[12px] font-semibold text-white transition hover:bg-white hover:text-industrial-dark"
+                >
+                  <span className="flex items-center gap-2">
+                    <FileText className="h-3.5 w-3.5" />
+                    Product Brochure (PDF)
+                  </span>
+                  <Download className="h-3.5 w-3.5 opacity-80" />
+                </a>
+                <a
+                  href={site.companyProfile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Kredence_Steel_Trading_Company_Profile_V3.pdf"
+                  className="inline-flex items-center justify-between rounded-xs border border-white/20 bg-black/20 px-3.5 py-2 text-[12px] font-semibold text-white/80 transition hover:bg-white hover:text-industrial-dark"
+                >
+                  <span className="flex items-center gap-2">
+                    <FileDown className="h-3.5 w-3.5" />
+                    Company Profile (PDF)
+                  </span>
+                  <Download className="h-3.5 w-3.5 opacity-80" />
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>

@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Download, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { site } from "@/data/site";
 
@@ -39,6 +39,16 @@ export default function TopBar() {
           >
             <MapPin className="h-3.5 w-3.5 shrink-0" />
             Sharjah, Dubai, UAE
+          </a>
+          <a
+            href={site.brochure}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Kredence_Brochure.pdf"
+            className="hidden items-center gap-1.5 border border-ems-cyan/40 bg-ems-cyan/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-ems-cyan transition hover:bg-ems-cyan hover:text-ems-navy lg:inline-flex"
+          >
+            <Download className="h-3 w-3" />
+            Brochure
           </a>
           <Link
             href="/contact"

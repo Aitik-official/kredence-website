@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download, FileDown, FileText } from "lucide-react";
 import Reveal from "./Reveal";
 import Clients from "./Clients";
+import { site } from "@/data/site";
 
 const values = [
   {
@@ -82,6 +83,46 @@ export default function AboutPageContent() {
                     {badge}
                   </span>
                 ))}
+              </div>
+            </div>
+
+            {/* Official Documents & Company Profile Downloads */}
+            <div className="mt-8 rounded-xs border border-industrial-line bg-industrial-mist p-5 sm:p-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-industrial-steel">
+                    Company Documentation
+                  </p>
+                  <h3 className="mt-1 font-display text-[15px] font-bold uppercase tracking-wide text-industrial-ink sm:text-base">
+                    Official Corporate Profile & Brochure
+                  </h3>
+                  <p className="mt-1 text-[13px] text-[#666]">
+                    Download verified technical specs, corporate background, and product portfolios.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2.5 sm:shrink-0">
+                  <a
+                    href={site.companyProfile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Kredence_Steel_Trading_Company_Profile_V3.pdf"
+                    className="logo-grad inline-flex items-center gap-2 px-4 py-2.5 text-[12px] font-semibold tracking-wide text-white shadow-xs transition hover:brightness-110"
+                  >
+                    <FileText className="h-4 w-4" />
+                    <span>Company Profile (PDF)</span>
+                    <Download className="h-3.5 w-3.5 opacity-80" />
+                  </a>
+                  <a
+                    href={site.brochure}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Kredence_Brochure.pdf"
+                    className="inline-flex items-center gap-2 border border-industrial-steel/30 bg-white px-4 py-2.5 text-[12px] font-semibold tracking-wide text-industrial-ink transition hover:border-industrial-steel hover:text-industrial-steel"
+                  >
+                    <FileDown className="h-4 w-4 text-industrial-steel" />
+                    <span>Brochure (PDF)</span>
+                  </a>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -170,13 +211,26 @@ export default function AboutPageContent() {
               A trusted partner for the project
             </h2>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white px-5 py-3 text-[13px] font-medium text-industrial-steel-dark transition hover:bg-industrial-mist"
-          >
-            Contact us
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={site.companyProfile}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Kredence_Steel_Trading_Company_Profile_V3.pdf"
+              className="inline-flex items-center gap-2 border border-white/40 bg-white/10 px-5 py-3 text-[13px] font-medium text-white backdrop-blur-xs transition hover:bg-white/20 hover:border-white"
+            >
+              <FileText className="h-4 w-4" />
+              Company Profile (PDF)
+              <Download className="h-3.5 w-3.5 opacity-80" />
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white px-5 py-3 text-[13px] font-semibold text-industrial-steel-dark transition hover:bg-industrial-mist"
+            >
+              Contact us
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </>

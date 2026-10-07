@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ChevronRight, Menu, Search, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Download, FileText, Menu, Search, X } from "lucide-react";
 import Logo from "./Logo";
-import { navItems, productGroups } from "@/data/site";
+import { navItems, productGroups, site } from "@/data/site";
 
 type NavChild = { label: string; href: string };
 type NavItem = {
@@ -358,13 +358,26 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="logo-grad mt-3 inline-flex w-full items-center justify-center px-6 py-3.5 text-sm font-semibold text-white"
-              >
-                Get Quote
-              </Link>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <a
+                  href={site.brochure}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Kredence_Brochure.pdf"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex items-center justify-center gap-1.5 border border-industrial-steel/40 bg-industrial-mist px-3 py-3 text-xs font-semibold text-industrial-steel-dark"
+                >
+                  <Download className="h-3.5 w-3.5 text-industrial-steel" />
+                  Brochure
+                </a>
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="logo-grad inline-flex items-center justify-center px-3 py-3 text-xs font-semibold text-white"
+                >
+                  Get Quote
+                </Link>
+              </div>
             </nav>
           </div>
         </>

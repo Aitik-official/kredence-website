@@ -49,7 +49,7 @@ export default function Footer() {
   return (
     <footer className="relative z-10 bg-industrial-dark text-white">
       <div className="mx-auto w-full max-w-[90rem] px-6 py-10 sm:px-10 lg:px-14">
-        <div className="grid items-start gap-10 lg:grid-cols-3 lg:gap-8">
+        <div className="grid items-start gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
             <Link href="/" className="inline-flex bg-white px-3.5 py-2.5 sm:px-4 sm:py-3">
               <Image
@@ -81,6 +81,47 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-display text-[13px] font-bold uppercase tracking-[0.14em]">
+              Downloads
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              <li>
+                <a
+                  href={site.brochure}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Kredence_Brochure.pdf"
+                  className="inline-flex items-center gap-1.5 text-[14px] font-medium text-white/80 transition hover:text-industrial-steel-light"
+                >
+                  <span className="text-[10px] text-industrial-steel-light">PDF</span>
+                  Product Brochure
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.companyProfile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Kredence_Steel_Trading_Company_Profile_V3.pdf"
+                  className="inline-flex items-center gap-1.5 text-[14px] font-medium text-white/80 transition hover:text-industrial-steel-light"
+                >
+                  <span className="text-[10px] text-industrial-steel-light">PDF</span>
+                  Company Profile
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/certificates"
+                  className="inline-flex items-center gap-1.5 text-[14px] text-white/75 transition hover:text-industrial-steel-light"
+                >
+                  <span className="text-[10px] text-industrial-steel-light">ISO</span>
+                  Certificates & Dossier
+                </Link>
+              </li>
             </ul>
           </div>
 
