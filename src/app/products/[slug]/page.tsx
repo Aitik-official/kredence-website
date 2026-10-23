@@ -6,6 +6,7 @@ import ProductBack from "@/components/ProductBack";
 import ProductGallery from "@/components/ProductGallery";
 import SectionButton from "@/components/SectionButton";
 import { productDetails } from "@/data/product-details";
+import { productSeo } from "@/data/seo";
 import { productGroups } from "@/data/site";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -33,8 +34,37 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const found = findProduct(slug);
+  const seo = productSeo[slug];
+
   if (!found) return { title: "Product" };
-  return { title: found.item.title, description: found.item.description };
+
+  const canonicalUrl = `https://www.kredencesteel.com/products/${slug}`;
+  const title = seo?.title ?? found.item.title;
+  const description = seo?.description ?? found.item.description;
+  const keywords = seo?.keywords;
+
+  return {
+    title: {
+      absolute: title,
+    },
+    description,
+    ...(keywords && keywords.length > 0 ? { keywords } : {}),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "website",
+      images: [
+        {
+          url: found.item.image,
+          alt: found.item.title,
+        },
+      ],
+    },
+  };
 }
 
 export default async function ProductPage({ params }: PageProps) {

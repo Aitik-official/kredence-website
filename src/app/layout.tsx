@@ -36,6 +36,7 @@ const michroma = Michroma({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.kredencesteel.com"),
   title: {
     default: `${site.name} | ${site.tagline}`,
     template: `%s | ${site.shortName}`,

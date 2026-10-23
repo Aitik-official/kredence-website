@@ -9,9 +9,36 @@ import { getBlogs } from "@/lib/blogs";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Blogs",
+  title: {
+    absolute: "Steel & Building Materials Blogs UAE | Kredence Steel",
+  },
   description:
-    "Notes from Kredence Steel Trading on fencing systems, coated metals, coils, sheets, and site supply.",
+    "Explore expert insights, product guides, and industry updates on steel, roofing sheets, sandwich panels, fencing systems, and construction materials from Kredence Steel, serving businesses across the UAE.",
+  keywords: [
+    "Steel Industry Blogs UAE",
+    "Building Materials Blog Dubai",
+    "Steel Products Guide UAE",
+    "Construction Materials Articles Dubai",
+    "Roofing Sheets Information UAE",
+    "Sandwich Panels Guide Dubai",
+    "Fencing Solutions UAE",
+    "Steel Coil Industry Updates",
+    "Metal Roofing Materials UAE",
+    "Construction Industry Insights Dubai",
+    "Steel Supplier Blog UAE",
+    "Industrial Building Materials Dubai",
+    "Kredence Steel Blogs",
+  ],
+  alternates: {
+    canonical: "https://www.kredencesteel.com/blogs",
+  },
+  openGraph: {
+    title: "Steel & Building Materials Blogs UAE | Kredence Steel",
+    description:
+      "Explore expert insights, product guides, and industry updates on steel, roofing sheets, sandwich panels, fencing systems, and construction materials from Kredence Steel, serving businesses across the UAE.",
+    url: "https://www.kredencesteel.com/blogs",
+    type: "website",
+  },
 };
 
 function formatDate(value: string) {
