@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import {
   Poppins,
   Playfair_Display,
@@ -59,6 +60,21 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${playfair.variable} ${oswald.variable} ${michroma.variable} h-full`}
     >
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-MKWPW0B92B"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-MKWPW0B92B');
+          `}
+        </Script>
+      </head>
       <body className="flex min-h-full flex-col font-sans antialiased">
         <SiteShell>{children}</SiteShell>
       </body>
