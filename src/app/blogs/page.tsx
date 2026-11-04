@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import HeroPin from "@/components/HeroPin";
 import { getBlogs } from "@/lib/blogs";
+import { site } from "@/data/site";
 
 export const dynamic = "force-dynamic";
 
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
     description:
       "Explore expert insights, product guides, and industry updates on steel, roofing sheets, sandwich panels, fencing systems, and construction materials from Kredence Steel, serving businesses across the UAE.",
     url: "https://www.kredencesteel.com/blogs",
+    siteName: site.name,
     type: "website",
   },
 };
@@ -58,8 +60,9 @@ export default async function BlogsPage() {
     <>
       <HeroPin variant="compact">
         <PageHero
-          eyebrow="Blogs"
-          title="Blogs"
+          eyebrow="Industry Knowledge"
+          title="Blogs & Insights"
+          description="Technical procurement guides, material specifications, and construction insights for contractors across the UAE."
           image={
             posts[0]?.image ??
             "https://images.unsplash.com/photo-1456327102063-fb5054efe647?auto=format&fit=crop&w=1800&q=80"
@@ -100,7 +103,7 @@ export default async function BlogsPage() {
                       {post.excerpt}
                     </p>
                     <span className="logo-grad mt-6 inline-flex w-fit items-center gap-2 px-4 py-2.5 text-[13px] font-medium text-white">
-                      Continue reading
+                      Read Complete Guide
                       <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>

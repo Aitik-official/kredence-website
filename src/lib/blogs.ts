@@ -10,6 +10,8 @@ export type BlogPost = {
   excerpt: string;
   body: string;
   image: string;
+  aliases?: string[];
+  keywords?: string[];
 };
 
 const filePath = path.join(process.cwd(), "data", "blogs.json");
@@ -22,7 +24,7 @@ export async function getBlogs(): Promise<BlogPost[]> {
 
 export async function getBlog(slug: string): Promise<BlogPost | undefined> {
   const posts = await getBlogs();
-  return posts.find((post) => post.slug === slug);
+  return posts.find((post) => post.slug === slug || post.aliases?.includes(slug));
 }
 
 export function slugify(title: string) {
@@ -66,7 +68,7 @@ export async function createBlog(
 
 export async function updateBlog(slug: string, input: Omit<BlogPost, "id" | "slug">) {
   const posts = await getBlogs();
-  const index = posts.findIndex((post) => post.slug === slug);
+  const index = posts.findIndex((post) => post.slug === slug || post.aliases?.includes(slug));
   if (index < 0) return null;
   const current = posts[index];
   const next: BlogPost = {
@@ -84,7 +86,7 @@ export async function updateBlog(slug: string, input: Omit<BlogPost, "id" | "slu
 
 export async function deleteBlog(slug: string) {
   const posts = await getBlogs();
-  const next = posts.filter((post) => post.slug !== slug);
+  const next = posts.filter((post) => post.slug !== slug && !post.aliases?.includes(slug));
   if (next.length === posts.length) return false;
   await saveAll(next);
   return true;
